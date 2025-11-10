@@ -92,3 +92,9 @@ td.video img {
 .playlist tbody tr:hover td {
     background: #fafafa;
 }
+
+.highlighted-header {
+    background-color: blue;
+    color: white;
+    border: 3px solid black;
+}
