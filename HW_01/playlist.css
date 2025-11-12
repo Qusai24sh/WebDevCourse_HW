@@ -88,6 +88,29 @@ td.video img {
     height: auto;
 }
 
+/* Hover effect on the YouTube thumbnail link */
+.video a {
+    display: inline-block;
+    transition: transform .25s ease, filter .25s ease, box-shadow .25s ease;
+}
+
+.video a:hover img,
+.video a:focus img {
+    /* גם למקלדת (נגישות) */
+    filter: brightness(115%);
+    transform: scale(1.05);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, .18);
+    outline: none;
+}
+
+/* רמז פוקוס ברור ללינק עצמו (TAB) */
+.video a:focus {
+    outline: 3px solid #2563eb;
+    outline-offset: 3px;
+    border-radius: 10px;
+}
+
+
 /* היי-לייט ב-hover */
 .playlist tbody tr:hover td {
     background: #fafafa;
@@ -97,4 +120,15 @@ td.video img {
     background-color: blue;
     color: white;
     border: 3px solid black;
+}
+
+.selected-row {
+    background-color: lightblue;
+    /* רקע כחול בהיר */
+    font-size: 18px;
+    /* הגדלת פונטים */
+    color: blue;
+    /* טקסט כחול */
+    font-weight: bold;
+    /* טקסט מודגש */
 }
