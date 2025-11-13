@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="contact.css" />
+</head>
+
+<body>
+
+    <!-- פנים עם עיניים שעוקבות אחרי העכבר -->
+
+
+    <!-- הטופס -->
+    <div class="wrap">
+        <h1>Contact</h1>
+
+        <div class="panel">
+            <div class="panel__head">Send a Message</div>
+            <div class="face">
+                <div class="eye">
+                    <div class="pupil"></div>
+                </div>
+                <div class="eye">
+                    <div class="pupil"></div>
+                </div>
+            </div>
+
+            <table>
+                <tr>
+                    <td class="label">Name:</td>
+                    <td><input type="text" /></td>
+                </tr>
+                <tr>
+                    <td class="label">Email:</td>
+                    <td><input type="email" /></td>
+                </tr>
+                <tr>
+                    <td class="label">Phone:</td>
+                    <td><input type="tel" /></td>
+                </tr>
+                <tr>
+                    <td class="label">Subject:</td>
+                    <td><input type="text" /></td>
+                </tr>
+                <tr>
+                    <td class="label">Message:</td>
+                    <td><textarea></textarea></td>
+                </tr>
+                <tr>
+                    <td class="label">Send Message</td>
+                    <td class="actions">
+                        <button class="btn" type="button" onclick="sendMessage()">
+                            Send Message
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- JS: אלרט + DEBUG + עיניים -->
+    <script>
+        // סעיף 17 – DEBUG + ALERT
+        function sendMessage() {
+            console.log("DEBUG: Send button clicked");
+            alert("Your message has been sent successfully!");
+        }
+
+        // עיניים שרודפות אחרי העכבר
+        document.addEventListener("mousemove", (e) => {
+            document.querySelectorAll(".eye").forEach((eye) => {
+                const pupil = eye.querySelector(".pupil");
+                const rect = eye.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+
+                const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
+                const maxMove = 10; // כמה רחוק האישון יכול לזוז
+                const x = Math.cos(angle) * maxMove;
+                const y = Math.sin(angle) * maxMove;
+
+                pupil.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        });
+    </script>
+</body>
+
+</html>

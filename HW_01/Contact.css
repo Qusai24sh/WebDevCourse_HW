@@ -1,0 +1,248 @@
+/* צבעים ואפקטים מודרניים */
+:root {
+    --bg1: #4facfe;
+    --bg2: #00f2fe;
+    --bg3: #38bdf8;
+    --card-bg: rgba(255, 255, 255, 0.78);
+    --border-color: rgba(255, 255, 255, 0.45);
+    --text-dark: #0f172a;
+    --label-color: #334155;
+    --focus-ring: #6366f1;
+    --button-gradient: linear-gradient(135deg, #d53369 0%, #daae51 100%);
+    --button-hover-gradient: linear-gradient(135deg, #ff9966 0%, #ff5e62 100%);
+    --shadow: 0 12px 35px rgba(15, 23, 42, 0.35);
+}
+
+/* רקע עם גרדיינט זז */
+body {
+    margin: 0;
+    padding: 40px 60px 40px 60px;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--bg1), var(--bg2), var(--bg3));
+    background-size: 300% 300%;
+    animation: bgMove 18s ease infinite;
+
+    display: flex;
+    justify-content: space-between;
+    /* פנים בצד שמאל, טופס בצד ימין */
+    align-items: flex-start;
+}
+
+@keyframes bgMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* מעטפת הטופס – טבלה קצת קטנה יותר */
+.wrap {
+    width: 100%;
+    max-width: 850px;
+    /* במקום 620px - זה מגדיל את הטבלה */
+    margin: 0 auto;
+    /* מרכז אופקית */
+    position: relative;
+    /* מאפשר למקם את הפנים יחסית לטבלה */
+}
+
+
+/* כותרת */
+h1 {
+    text-align: center;
+    font-size: 52px;
+    letter-spacing: 2px;
+    color: white;
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+    margin: 0 0 28px;
+}
+
+/* כרטיס הטופס (Glassmorphism + כניסה) */
+.panel {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 0;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(18px);
+    transform-origin: center top;
+    animation: cardEnter 0.75s ease-out both;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.panel:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.45);
+}
+
+@keyframes cardEnter {
+    0% {
+        opacity: 0;
+        transform: translateY(25px) scale(0.96);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* כותרת פנימית */
+.panel__head {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--text-dark);
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* טבלה */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+td.label {
+    width: 24%;
+    color: var(--label-color);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* שדות */
+input,
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.95);
+    font-size: 16px;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.1s ease;
+    outline: none;
+}
+
+textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--focus-ring);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.4);
+    transform: translateY(-1px);
+}
+
+/* כפתור */
+.actions {
+    text-align: center;
+    padding: 22px;
+}
+
+.btn {
+    padding: 12px 32px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    background: var(--button-gradient);
+    color: white;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.25s ease;
+    animation: buttonPulse 2.4s ease-in-out infinite;
+}
+
+.btn:hover {
+    background: var(--button-hover-gradient);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4);
+    filter: brightness(1.05);
+}
+
+.btn:active {
+    transform: translateY(1px) scale(0.99);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes buttonPulse {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-1px) scale(1.03);
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* הפאנל חייב להיות position: relative */
+.panel {
+    position: relative;
+}
+
+/* הפנים — ממוקמים בפינה העליונה השמאלית */
+.face {
+    position: absolute;
+    top: -40px;
+    /* יושב מעל הפאנל ב־40px */
+    left: -40px;
+    /* בורח קצת שמאלה */
+    width: 100px;
+    height: 100px;
+
+    background: #ffe4c4;
+    border-radius: 50%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    /* מעל הפאנל */
+}
+
+/* עיניים */
+.eye {
+    width: 32px;
+    height: 32px;
+    background: white;
+    border: 2px solid #000;
+    border-radius: 50%;
+    margin: 0 8px;
+    position: relative;
+}
+
+.pupil {
+    width: 14px;
+    height: 14px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    transition: transform 0.05s linear;
+}

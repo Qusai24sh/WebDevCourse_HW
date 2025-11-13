@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Audio List</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            margin: 20px auto;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 8px 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        img.cover {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+        }
+
+        a.download-link {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Cover</th>
+                <th>Title</th>
+                <th>Artist</th>
+                <th>Year</th>
+                <th>Play</th>
+                <th>Download</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- שיר 1 -->
+            <tr>
+                <td>
+                    <img class="cover" src="images/imagine.jpg" alt="Imagine cover">
+                </td>
+                <td>Imagine</td>
+                <td>John Lennon</td>
+                <td>1971</td>
+                <td>
+                    <audio controls>
+                        <source src="AudioFiles/imagine.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </td>
+                <td>
+                    <!-- חשוב: שימוש ב-download בלי שום קוד JS -->
+                    <a class="download-link" href="AudioFiles/imagine.mp3" download>
+                        Download
+                    </a>
+                </td>
+            </tr>
+
+            <!-- שיר 2 -->
+            <tr>
+                <td>
+                    <img class="cover" src="images/bohemian.jpg" alt="Bohemian Rhapsody cover">
+                </td>
+                <td>Bohemian Rhapsody</td>
+                <td>Queen</td>
+                <td>1975</td>
+                <td>
+                    <audio controls>
+                        <source src="AudioFiles/bohemian.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </td>
+                <td>
+                    <a class="download-link" href="AudioFiles/bohemian.mp3" download>
+                        Download
+                    </a>
+                </td>
+            </tr>
+
+            <!-- אם צריך שיר 3 – להוסיף עוד <tr> דומה -->
+        </tbody>
+    </table>
+
+</body>
+
+</html>
