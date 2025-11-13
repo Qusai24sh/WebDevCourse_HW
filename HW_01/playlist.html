@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="playlist.css" />
     <style>
-        /* Center the title */
+        /* מרכז את הכותרת */
         .topbar h1 {
             text-align: center;
             margin: 0;
@@ -25,94 +25,75 @@
     <main class="container">
         <table class="playlist">
             <thead>
-                <table class="playlist">
-                    <thead>
-                        <tr>
-                            <th>Singer Name</th>
-                            <th>Title</th>
-                            <th>Video</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="selected-row">
-                            <td>Adele</td>
-                            <td>Hello</td>
-                            <td class="video">
-                                <a href="https://www.youtube.com/watch?v=YQHsXMglC9A" target="_blank" rel="noopener">
-                                    <img src="https://img.youtube.com/vi/YQHsXMglC9A/hqdefault.jpg" alt="Adele - Hello">
-                                </a>
-                            </td>
-                        </tr>
-
-
-                        <tr>
-                            <td>Ed Sheeran</td>
-                            <td>Shape of You</td>
-                            <td class="video">
-                                <a href="https://www.youtube.com/watch?v=JGwWNGJdvx8" target="_blank" rel="noopener">
-                                    <img src="https://img.youtube.com/vi/JGwWNGJdvx8/hqdefault.jpg"
-                                        alt="Ed Sheeran - Shape of You">
-                                </a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>The Weeknd</td>
-                            <td>Blinding Lights</td>
-                            <td class="video">
-                                <a href="https://www.youtube.com/watch?v=fHI8X4OXluQ" target="_blank" rel="noopener">
-                                    <img src="https://img.youtube.com/vi/fHI8X4OXluQ/hqdefault.jpg"
-                                        alt="The Weeknd - Blinding Lights">
-                                </a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>Imagine Dragons</td>
-                            <td>Believer</td>
-                            <td class="video">
-                                <a href="https://www.youtube.com/watch?v=7wtfhZwyrcc" target="_blank" rel="noopener">
-                                    <img src="https://img.youtube.com/vi/7wtfhZwyrcc/hqdefault.jpg"
-                                        alt="Imagine Dragons - Believer">
-                                </a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-            </thead>
-            <tbody>
-                <!-- דוגמה לשורה — החלף ידנית בסעיף 10 -->
                 <tr>
-                    <td><!-- Singer --></td>
-                    <td><!-- Song title --></td>
+                    <th>Singer Name</th>
+                    <th>Title</th>
+                    <th>Video</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr class="selected-row">
+                    <td>Adele</td>
+                    <td>
+                        <a class="song-link" href="https://www.youtube.com/watch?v=YQHsXMglC9A" target="_blank"
+                            rel="noopener">
+                            Hello
+                        </a>
+                    </td>
                     <td class="video">
-                        <!-- שים כאן קישור ליוטיוב ו-thumbnail -->
-                        <!-- דוגמה שמראים כמבנה בלבד: -->
-                        <!--
-            <a href="https://www.youtube.com/watch?v=XXXXXXXXXXX" target="_blank" rel="noopener">
-              <img src="https://img.youtube.com/vi/XXXXXXXXXXX/hqdefault.jpg" alt="Watch on YouTube">
-            </a>
-            -->
+                        <a href="https://www.youtube.com/watch?v=YQHsXMglC9A" target="_blank" rel="noopener">
+                            <img src="https://img.youtube.com/vi/YQHsXMglC9A/hqdefault.jpg" alt="Adele - Hello">
+                        </a>
                     </td>
                 </tr>
 
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td class="video"></td>
+                    <td>Ed Sheeran</td>
+                    <td>
+                        <a class="song-link" href="https://www.youtube.com/watch?v=JGwWNGJdvx8" target="_blank"
+                            rel="noopener">
+                            Shape of You
+                        </a>
+                    </td>
+                    <td class="video">
+                        <a href="https://www.youtube.com/watch?v=JGwWNGJdvx8" target="_blank" rel="noopener">
+                            <img src="https://img.youtube.com/vi/JGwWNGJdvx8/hqdefault.jpg"
+                                alt="Ed Sheeran - Shape of You">
+                        </a>
+                    </td>
                 </tr>
 
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td class="video"></td>
+                    <td>The Weeknd</td>
+                    <td>
+                        <a class="song-link" href="https://www.youtube.com/watch?v=fHI8X4OXluQ" target="_blank"
+                            rel="noopener">
+                            Blinding Lights
+                        </a>
+                    </td>
+                    <td class="video">
+                        <a href="https://www.youtube.com/watch?v=fHI8X4OXluQ" target="_blank" rel="noopener">
+                            <img src="https://img.youtube.com/vi/fHI8X4OXluQ/hqdefault.jpg"
+                                alt="The Weeknd - Blinding Lights">
+                        </a>
+                    </td>
                 </tr>
 
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td class="video"></td>
+                    <td>Imagine Dragons</td>
+                    <td>
+                        <a class="song-link" href="https://www.youtube.com/watch?v=7wtfhZwyrcc" target="_blank"
+                            rel="noopener">
+                            Believer
+                        </a>
+                    </td>
+                    <td class="video">
+                        <a href="https://www.youtube.com/watch?v=7wtfhZwyrcc" target="_blank" rel="noopener">
+                            <img src="https://img.youtube.com/vi/7wtfhZwyrcc/hqdefault.jpg"
+                                alt="Imagine Dragons - Believer">
+                        </a>
+                    </td>
                 </tr>
             </tbody>
         </table>

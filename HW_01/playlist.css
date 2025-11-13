@@ -132,3 +132,17 @@ td.video img {
     font-weight: bold;
     /* טקסט מודגש */
 }
+
+/* עיצוב ללינקים של הסרטונים */
+.video-link {
+    display: inline-block;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.video-link:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
